@@ -36,7 +36,6 @@ public class TpDiez {
 		
 		//Almacenamos en una variable el monto total aportado por los 3 socios y lo devolvemos.
 		int valorTotalAportado = montoSocioUno + montoSocioDos + montoSocioTres;
-		
 		System.out.println("El valor total aportado es: " + valorTotalAportado);
 		
 		

@@ -10,11 +10,14 @@ public class TpSiete {
 	{
 		
 		//Instrucción
-		System.out.println("Por favor ingresa el ancho y el largo de un terreno en metros. Por ultimo su valor por metro cuadrado.");
+		System.out.println("Por favor ingresa el ancho y el largo de un terreno en metros.");
 		
 		//Datos que obtuvimos del usuario con los que averiguaremos los resultados exigidos.
 		int anchoTerreno = scanner.nextInt();
 		int largoTerreno =  scanner.nextInt();
+		
+		//Lo mismo con el valor faltante
+		System.out.println("Ahora ingresa su valor por metro cuadrado.");
 		int valorMetroCuadrado = scanner.nextInt();
 		
 		//Calculamos el valor total del terreno.

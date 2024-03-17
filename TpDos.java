@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TpDos {
 
-	//Creamos un scanner para dejarle escribir al usuario en el futuro
+	//Creamos un scanner para que el usuario ingrese las notas mediante un metodo heredado de la clase.
 	public static final Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) 

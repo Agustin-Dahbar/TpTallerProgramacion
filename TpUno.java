@@ -1,11 +1,10 @@
 package trabajopractico;
 
-import java.util.Scanner;
-
+import java.util.Scanner; //Referencia para poder utilizar la clase Scanner ya que no esta declarada aquí.
+						//De esta clase heredaremos el metodo a usar. Este metodo se declaro dentro de ella.
 public class TpUno {
 
-	//Creamos una objeto Scanner instanciando su clase
-	//Este servirá para escanear el valor ingresado por el usuario
+	//Creamos una objeto Scanner instanciando su clase.
 	public static final Scanner scanner = new Scanner(System.in); 
 	
 	
