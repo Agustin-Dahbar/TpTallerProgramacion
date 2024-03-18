@@ -1,0 +1,24 @@
+package trabajopractico;
+
+import java.util.Scanner;
+
+public class Tp23 {
+	
+	public static final Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args) 
+	{
+		//Instrucciones y variable que almacena.
+		System.out.println("Por favor ingresa un numero");
+		int numero = scanner.nextInt();
+		
+		//Bucle que itera por el multiplicador/factor para realizar las 10 primeras múltiplicaciones con el numero ingresado por el user
+		for(int i = 1; i <= 10; i++) 
+		{
+			int resultado = numero * i; //Multiplicamos al numero por el primer multiplicador. 
+			System.out.println("Los resultados de los primeros 10 múltiplos del numero son: " + resultado);
+			//En cada iteración el multiplciador aumentará un valor. Su último valor será 10
+		}
+	}
+
+}
