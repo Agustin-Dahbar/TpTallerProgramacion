@@ -23,7 +23,7 @@ public class Tp35 {
 			System.out.println("Ingresa el nombre: ");
 			nombre = scanner.nextLine(); 
 			
-			if(nombre.contains("*")) //Si el nombre contiene el asterisco, 
+			if(nombre.contains("*")) //Si el nombre contiene el asterisco. (Se puede ingresar solo un asterisco, por supuesto) 
 			{
 				break; //damos por finalizado el programa.
 			}
