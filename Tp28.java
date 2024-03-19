@@ -16,6 +16,7 @@ public class Tp28 {
 		System.out.println("Ingresa " + cantidadDeNumerosIngresados + " numeros. Te diré cual es el numero más grande de tu selección.");
 		
 		//Declaramos y asignamos la variable que al final almacenará al número más grande. Ahora, La asignamos con el menor posible.
+		int posicionNumeroMasGrande = 0; //Variable que almacenará la posicion del numero mas grande.
 		int numeroMasGrande =  Integer.MIN_VALUE; //Por que? Asi se cumple el IF y nos aseguramos que se actualice la variable con los numeroso entrados por el usuario
 		//MIN_VALUE es una propiedad constante de la clase Integer, es estatica por lo tanto no requerimos de instanciar a su clase
 		//para heredarla 
@@ -28,14 +29,17 @@ public class Tp28 {
             System.out.println("Numero " + (i) + ":"); 
             int numero = scanner.nextInt();
             
-            if (numero > numeroMasGrande) 
-            { 							//Averiguamos cual es el numero más grande de los 3 ingresados en cada iteración.
-                numeroMasGrande = numero;
+            if (numero > numeroMasGrande) //Averiguamos cual es el numero más grande de los 3 ingresados en cada iteración.
+            { 							
+                numeroMasGrande = numero; //Asignamos el nuevo valor identificado por la condicion como el mas grande a la var correspondiente
+                posicionNumeroMasGrande = i; //Obtenemos en la variable de su posicion el valor de posicion tradicional.
             }
         }
+		//Variable con la posicion indexada. Uno menos que la obtenida en la sentencia if.
+		int posicionIndexadaNumeroMasGrande = posicionNumeroMasGrande - 1;
 		
 		//Imprimimos el numero más grande averiguado en el IF.
-		System.out.println("El numero mas grande de tu seleccion fue el " + numeroMasGrande);
+		System.out.println("El numero mas grande de tu seleccion fue el " + numeroMasGrande + " y se creo en la posicion tradicional " + posicionNumeroMasGrande + " que sería la posición " + posicionIndexadaNumeroMasGrande + " en indexacion de corchetes.");
 	}
 
 }
