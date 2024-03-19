@@ -42,7 +42,7 @@ public class Tp27 {
 	{
 		if(edad > 18 && edad % 2 != 0) //si edad mayor 18 y si la division de edad por 2 da un resto diferente a 0.
 		{
-			System.out.println("Esta edad es mayor de 18 y ademas impar."); //Si es TRUE, este metodo devolverá esta linea en la consola.
+			System.out.println("Esta edad es mayor de 18 y además es impar."); //Si es TRUE, este metodo devolverá esta linea en la consola.
 		}
 	}
 }
