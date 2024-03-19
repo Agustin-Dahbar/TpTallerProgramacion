@@ -31,7 +31,7 @@ public class Tp29 {
 		//Instruccion final
 		System.out.println("La nota del examen es " + nota);
 		
-		//Cerramos el scanner para liberar espacio.
+		//Cerramos el scanner para liberar los recursos asociados a la entrada del usuario al ya no necesitarla. Es una buena práctica.
 		scanner.close();
 	}
 
