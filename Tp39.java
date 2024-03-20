@@ -9,15 +9,12 @@ public class Tp39 {
         
 		Scanner scanner = new Scanner(System.in);
 
-        //Instrucciones y almacen de jugadores.
-        System.out.println("Ingrese la cantidad de jugadores (al menos 2):");
-        int numeroJugadores = scanner.nextInt();
-        scanner.nextLine(); // Limpieza de bufer.
+		//Variable en la que el usuario ingresará la cantidad de jugadores. Se usará un bucle while para repetir infinitamente en caso de que haya ingresado menos que 2. 
+		int numeroJugadores = 0; //Debemos asignarla con numeros negativos, 0 o 1 para que se ejecute el while. 2 o mas cancelaria ese bucle y pasariamos directamente a la asignacion de nombres y la cantidad de participantes sería el valor que le hayamos asignado a la variable.
 
-        //Bucle while. Se ejecutará si se ingresaron menos de 2 jugadores.
-        while (numeroJugadores < 2) 
+        while (numeroJugadores < 2) //Bucle while. Se ejecutará si se ingresaron menos de 2 jugadores. 
         {
-            System.out.println("Debe ingresar al menos 2 jugadores. Por favor, inténtelo de nuevo:");
+            System.out.println("Ingrese la cantidad de jugadores. Deben ser al menos 2. En caso de que seleccione menos, se repetirá este proceso.");
             numeroJugadores = scanner.nextInt(); //Le volvemos a pedir (13) al usuario que ingrese los numeros de jugadores. Y si no, perderá su vida repitiendo la instrucción.
             scanner.nextLine(); // Limpiamos el buffer
         }
@@ -47,7 +44,7 @@ public class Tp39 {
         {
             int puntajeTotalDelJugador  = 0; //Variable que almacenará la suma de los 3 puntajes para cada jugador. Al hacer eso se almacenará en la lista. Se repetirá por cada jugador restante.
             
-            // Bucle interno que con la distancia de los 3 tiros puntuará a cada jugador.
+            // Bucle interno que con la distancia de los 3 tiros puntuará a cada jugador. Este bucle iterará una vez por cada tiro existente en el juego, es decir 3 veces por cada jugador
             for (int j = 0; j < 3; j++) //Se ejecutará 3 veces (3 tiros) para los valores de 0, 1 y 2.
             {
                 System.out.println("Ingrese la distancia del tiro " + (j + 1) + " para " + nombres.get(i) + ":"); //Via get() obtenemos el nombre. Es equivalente nombres[i] en C# o JS.
@@ -58,23 +55,28 @@ public class Tp39 {
                 int puntajePorTiro = calcularPuntaje(distancia); //Calculamos el puntaje via un metodo argumentado con la distancia entrada por el usuario.
                 puntajeTotalDelJugador += puntajePorTiro; //Sumamos los puntajes individuales por iteracion en la variable que declaró el bucle externo que almacena el total del jugador iterado.
 
+                // int puntajeTotal += calcularPuntaje(distancia); esto nos ahorraría código pero prefiero plantearlo con mayor cantidad de datos
+                
                 //Sentencia if que identificará los tiros al centro
                 if (distancia == 0) // (puntajePorTiro = 500) sería compatible de igual manera, ya que eso indicaría tiro en el centro. 
                 {
                     tirosAlCentro++;
                 }
             }
-            
-            puntajesFinales.set(i, puntajeTotalDelJugador); //A la lista 'puntajesFinales' le agregamos los puntajes de cada jugador.  
+            //El bucle externo se ejecutó las 3 veces (una por cada tiro) ya tenemos los puntajes del primer jugador. Ahora se los pushearemos a la lista que almacenará los. 
+
+            puntajesFinales.set(i, puntajeTotalDelJugador); //A la lista 'puntajesFinales' le agregamos los puntajes de cada jugador.
+            //Esta linea se encuentra en el bucle externo ya que no queremos almacenar cada puntaje de cada tiro, si no solo los puntajes finales de cada uno de los jugadores. Necesitamos pushearle 3 valores. Cada uno de estos valores se obtiene cada 3 iteraciones del bucle externo (puntaje total de cada jugador)
         }
 
-        //Resumen: 
-        	//el bucle externo se encargó de declarar y asignar valor al puntaje total de cada jugador.
-        	// mientras que el bucle interno fue el encargado de obtener esos datos que asignará el interno, es decir el puntaje del participante dsp de sus 3 tiros.
-        	//esta obtención de datos se realizó mediante una funcion que fue argumentada con el dato entrado por el usuario (la distancia del centro)
+        //Ya finalizó la primer ejecución del bucle entero (incluyendo ambos) en ella el interno se ejecutó una vez (declaro y asignó la puntuacion del jugador iterado en la primer repetición. 
+        //Mientras que el bucle externo se ejecutó 3 veces (una para cada puntuacion de cada tiro), en estas ejecuciones obtuvo y sumo el puntaje de los 3 tiros del mismo y hasta ahora único jugador.
+        
+        //Ahora se volverá a repetir este bucle por cada jugador restante (3 ejecuciones del bucle externo por cada una del interno) 
         
         
-        // Encontramos al jugador con el puntaje más alto
+        
+        // Encontramos al jugador con el puntaje más alto. Compararemos en un if los puntajes finales de cada jugador (almacenados en la lista de puntajes)
         int indiceGanador = 0; //Almacenamos el indice del ganador para imprimirlo.
         int puntajeMaximo = 0; //Le hacemos un get a la lista que tiene los puntajes finales de todos los jugadores.
         
@@ -92,7 +94,7 @@ public class Tp39 {
         System.out.println("El ganador del torneo es: " + nombres.get(indiceGanador) + " con un puntaje de " + puntajeMaximo);
         System.out.println("La cantidad total de tiros al centro es: " + tirosAlCentro);
 
-        scanner.close();
+        scanner.close(); 
     }
 
     // Metodo que calculará el puntaje (linea 57) según la distancia de los tiros.
