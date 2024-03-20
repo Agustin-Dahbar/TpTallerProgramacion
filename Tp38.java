@@ -21,17 +21,17 @@ public class Tp38 {
             
             System.out.println("Ahora ingresa tu contraseña");
             int passwordIngresada = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); //Limpiamos bufer, el enter del nextInt() generó 
             
             //Verificamos si los datos ingresados son correctos.
             if (nombreUsuarioIngresado.equals(nombreUsuario) && passwordIngresada == password) 
             {
                 System.out.println("Acceso concedido");
-                break; // 
+                break; // Paramos el bucle do.. while.
             } 
             else 
             {
-                intentosRealizados++; //Falló las credenciales, pierde un intento. Si aún tiene intentos, sigue la linea 38.
+                intentosRealizados++; //Falló las credenciales, pierde un intento. Si aún tiene intentos, sigue la línea 38.
                     System.out.println("Credenciales inválidas.");
             }
         } while (intentosRealizados < 3);

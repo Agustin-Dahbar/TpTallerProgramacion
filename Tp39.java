@@ -1,0 +1,119 @@
+package trabajopractico;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Tp39 {
+
+	public static void main(String[] args) {
+        
+		Scanner scanner = new Scanner(System.in);
+
+        //Instrucciones y almacen de jugadores.
+        System.out.println("Ingrese la cantidad de jugadores (al menos 2):");
+        int numeroJugadores = scanner.nextInt();
+        scanner.nextLine(); // Limpieza de bufer.
+
+        //Bucle while. Se ejecutará si se ingresaron menos de 2 jugadores.
+        while (numeroJugadores < 2) 
+        {
+            System.out.println("Debe ingresar al menos 2 jugadores. Por favor, inténtelo de nuevo:");
+            numeroJugadores = scanner.nextInt(); //Le volvemos a pedir (13) al usuario que ingrese los numeros de jugadores. Y si no, perderá su vida repitiendo la instrucción.
+            scanner.nextLine(); // Limpiamos el buffer
+        }
+
+        //Al ya haber ingresado 2 o mas, continuamos con el programa..
+        
+        // Declaración de listas (en C#) que almacenarán los nombres de los jugadores y sus puntajes finales. Habrá un un nombre y un puntaje por cada jugador.
+        ArrayList<String> nombres = new ArrayList<>();
+        ArrayList<Integer> puntajesFinales = new ArrayList<>();
+ 
+        // Asignacion de las listas mediante bucle for donde le pediremos al usuario la entrada de los datos.
+        for (int i = 0; i < numeroJugadores; i++)
+        {
+            System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":"); //Instruccion
+            String nombre = scanner.nextLine(); //Entrada del nombre.
+            nombres.add(nombre); //Añadimos el nombre entrado a la lista.
+            puntajesFinales.add(0); // Inicializamos el primer tiro de cada participante en 0.
+        }
+
+        
+        // Contador para los tiros al centro.
+        int tirosAlCentro = 0;
+        
+        //PAR DE BUCLES en donde se desarrollará la obtencion de puntaje de los 3 jugadores según sus tiros.
+        // Bucle externo, en el se declara el puntajeTotal de cada jugador y al final se le asignan los valores finales. Estos valores obtenidos por el bucle externo. 
+        for (int i = 0; i < numeroJugadores; i++) // Para iterar por todos los elementos de algo la condicion debe ser 0 < nombre
+        {
+            int puntajeTotalDelJugador  = 0; //Variable que almacenará la suma de los 3 puntajes para cada jugador. Al hacer eso se almacenará en la lista. Se repetirá por cada jugador restante.
+            
+            // Bucle interno que con la distancia de los 3 tiros puntuará a cada jugador.
+            for (int j = 0; j < 3; j++) //Se ejecutará 3 veces (3 tiros) para los valores de 0, 1 y 2.
+            {
+                System.out.println("Ingrese la distancia del tiro " + (j + 1) + " para " + nombres.get(i) + ":"); //Via get() obtenemos el nombre. Es equivalente nombres[i] en C# o JS.
+                int distancia = scanner.nextInt();
+                scanner.nextLine(); // Limpiamos el buffer
+
+                //Obtenemos el puntaje del tiro segun la distancia mediante un metodo.
+                int puntajePorTiro = calcularPuntaje(distancia); //Calculamos el puntaje via un metodo argumentado con la distancia entrada por el usuario.
+                puntajeTotalDelJugador += puntajePorTiro; //Sumamos los puntajes individuales por iteracion en la variable que declaró el bucle externo que almacena el total del jugador iterado.
+
+                //Sentencia if que identificará los tiros al centro
+                if (distancia == 0) // (puntajePorTiro = 500) sería compatible de igual manera, ya que eso indicaría tiro en el centro. 
+                {
+                    tirosAlCentro++;
+                }
+            }
+            
+            puntajesFinales.set(i, puntajeTotalDelJugador); //A la lista 'puntajesFinales' le agregamos los puntajes de cada jugador.  
+        }
+
+        //Resumen: 
+        	//el bucle externo se encargó de declarar y asignar valor al puntaje total de cada jugador.
+        	// mientras que el bucle interno fue el encargado de obtener esos datos que asignará el interno, es decir el puntaje del participante dsp de sus 3 tiros.
+        	//esta obtención de datos se realizó mediante una funcion que fue argumentada con el dato entrado por el usuario (la distancia del centro)
+        
+        
+        // Encontramos al jugador con el puntaje más alto
+        int indiceGanador = 0; //Almacenamos el indice del ganador para imprimirlo.
+        int puntajeMaximo = 0; //Le hacemos un get a la lista que tiene los puntajes finales de todos los jugadores.
+        
+        //Bucle que comparará los valores de la lista puntajesFinales para identificar al puntaje más alto.
+        for (int i = 0; i < numeroJugadores; i++) //Recorremos por todos los jugadores.
+        {
+            if (puntajesFinales.get(i) > puntajeMaximo) //Mediante indice accederemos a cada valor de la lista que almacena los puntajes de los participantes. El primero iterado se almacenará en la variable puntajeMaximo, el resto se compararán con ese primero almacenado. Quedará el más grande.
+            {
+                indiceGanador = i; //Si se da true y el puntaje iterado es el máximo, guardamos su indice para usarlo en la impresion del nombre del jugador.
+                puntajeMaximo = puntajesFinales.get(i); //Sobreescribimos el valor de puntajeMaximo con el nuevo puntaje mas alto iterado.
+            }
+        }
+
+        // Mostramos el nombre del ganador y su puntaje
+        System.out.println("El ganador del torneo es: " + nombres.get(indiceGanador) + " con un puntaje de " + puntajeMaximo);
+        System.out.println("La cantidad total de tiros al centro es: " + tirosAlCentro);
+
+        scanner.close();
+    }
+
+    // Metodo que calculará el puntaje (linea 57) según la distancia de los tiros.
+    public static int calcularPuntaje(int distancia) 
+    {
+        if (distancia == 0) // Solo 0
+        {
+            return 500;
+        } 
+        else if (distancia <= 10) //De 1 a 10.
+        {
+            return 250;
+        } 
+        else if (distancia <= 50) //De 11 a 50
+        {
+            return 100;
+        } 
+        else //De 51 a infinito. //Fuera del tablero.
+        {
+            return 0;
+        }
+    }
+}
+
