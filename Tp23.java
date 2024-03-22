@@ -17,7 +17,8 @@ public class Tp23 {
 		for(int i = 1; i <= 10; i++) 
 		{
 			int resultado = numero * i; //Multiplicamos al numero por el primer multiplicador. 
-			System.out.println("Los resultados de los primeros 10 múltiplos del numero son: " + resultado);
+			System.out.println(numero + " * " + i + " = " + resultado);
+			//System.out.println("Los 10 primeros múltiplos del numero son " + resultado);
 			//En cada iteración el multiplciador aumentará un valor. 
 		}
 	}
