@@ -15,20 +15,18 @@ public class Tp22 {
 		do { 
             System.out.println("El valor del numero es: " + numero);
             numero++;
-        	} 
-		while (numero < 5); 
-		
-		//print que use temporalmente para mayor facilidad al construir el programa.
-		System.out.println("Valor actual de numero: " + numero);
+			} 
+		while (numero <= 5); 
+		//Debido a que se ejecuta nuevamente al valer 5 y el bucle tiene un ++ al final. El valor al salir del bucle será de 6. Por lo que habrá que realizar la resta antes de la primer impresión del bucle inverso.
 		
 		System.out.println("Finalizó la primer vuelta realizada por el do..while"); //Mensaje para el usuario
 		
 		//Bucle for para variar, realizará el el sentido opuesto
 		for(int i = 0; i <= 4 ; i++)
 		{
+			numero--; //En la línea 20 se explica porque antes del println.
 			System.out.println("El valor del numero es: " + numero );
-			numero--; //Obligatorio que sea luego del print asi se repite el 5 y lo toma como primer caracter de la cuenta inversa.
-			//Si estuviese antes del print el primer numero inverso seria el 4, ya que ya se habría realizado la extracción del valor.
+			
 		}
 		
 		System.out.println("Finalizó la vuelta inversa de los === numeros realizada por el FOR"); //Mensaje para el usuario
