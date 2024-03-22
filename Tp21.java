@@ -52,5 +52,7 @@ public class Tp21 {
 			System.out.println("Error. Dije entre 1 y 7.");
 		}
 		
+		
 	}
 }
+

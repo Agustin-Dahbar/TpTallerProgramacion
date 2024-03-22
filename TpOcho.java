@@ -12,21 +12,20 @@ public class TpOcho {
 		System.out.println("Ingresa dos numeros. Se realizarán las 4 operaciones aritmeticas entre ellos.");
 		
 		//Declaración de variables e inicialización con los valores que ingresen los usuarios.
-		int numeroNaturalUno = scanner.nextInt();
-		int numeroNaturalDos = scanner.nextInt();
+		int numeroUno = scanner.nextInt();
+		int numeroDos = scanner.nextInt();
 		
 		//Lógica para llevar a cabo las 4 operaciones aritmeticas.
-		int producto = numeroNaturalUno * numeroNaturalDos; 
-		double division = numeroNaturalUno / numeroNaturalDos;
-		int suma = numeroNaturalUno + numeroNaturalDos;
-		int resta = numeroNaturalUno - numeroNaturalDos;
+		int producto = numeroUno * numeroDos; 
+		double division = numeroUno / numeroDos;
+		int suma = numeroUno + numeroDos;
+		int resta = numeroUno - numeroDos;
 		
 		//Devolución de resultados.
 		System.out.println("El producto entre ambos numeros es: " + producto);
 		System.out.println("La division entre ambos numeros es: " + division);
 		System.out.println("La suma entre ambos numeros es: " + suma);
 		System.out.println("La resta entre ambos numeros es: " + resta);
-		
 	}
 
 }

@@ -12,20 +12,22 @@ public class Tp39 {
 		//Variable en la que el usuario ingresará la cantidad de jugadores. Se usará un bucle while para repetir infinitamente en caso de que haya ingresado menos que 2. 
 		int numeroJugadores = 0; //Debemos asignarla con numeros negativos, 0 o 1 para que se ejecute el while. 2 o mas cancelaria ese bucle y pasariamos directamente a la asignacion de nombres y la cantidad de participantes sería el valor que le hayamos asignado a la variable.
 
+		//INGRESO DE CANTIDAD DE JUGADORES
         while (numeroJugadores < 2) //Bucle while. Se ejecutará si se ingresaron menos de 2 jugadores. 
         {
             System.out.println("Ingrese la cantidad de jugadores. Deben ser al menos 2. En caso de que seleccione menos, se repetirá este proceso.");
-            numeroJugadores = scanner.nextInt(); //Le volvemos a pedir (13) al usuario que ingrese los numeros de jugadores. Y si no, perderá su vida repitiendo la instrucción.
+            numeroJugadores = scanner.nextInt(); //Le pedimos al usuario que ingrese la cant de participantes. Hasta que no entre 2 o más se repetirá el bucle ya que se seguirá cumpliendo la condicion.
             scanner.nextLine(); // Limpiamos el buffer
         }
 
         //Al ya haber ingresado 2 o mas, continuamos con el programa..
         
-        // Declaración de listas (en C#) que almacenarán los nombres de los jugadores y sus puntajes finales. Habrá un un nombre y un puntaje por cada jugador.
+        // Declaración de listas (en C#) que almacenarán los nombres de los jugadores y sus puntajes finales (que serán la suma de sus 3 puntajes temporales e individuales. Habrá un un nombre y un puntaje por cada jugador.
         ArrayList<String> nombres = new ArrayList<>();
         ArrayList<Integer> puntajesFinales = new ArrayList<>();
  
-        // Asignacion de las listas mediante bucle for donde le pediremos al usuario la entrada de los datos.
+        //INGRESO DE NOMBRES DE LOS JUGADORES
+        // Asignacion de las listas mediante bucle for. Los nombres los brindará el usuario. Los puntajes finales los inicializamos en 0 para evitar problemas.
         for (int i = 0; i < numeroJugadores; i++)
         {
             System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":"); //Instruccion
@@ -38,13 +40,14 @@ public class Tp39 {
         // Contador para los tiros al centro.
         int tirosAlCentro = 0;
         
-        //PAR DE BUCLES en donde se desarrollará la obtencion de puntaje de los 3 jugadores según sus tiros.
-        // Bucle externo, en el se declara el puntajeTotal de cada jugador y al final se le asignan los valores finales. Estos valores obtenidos por el bucle externo. 
+        //BUCLE INTERNO: SE DECLARA LA VARIABLE QUE ALMACENARÁ EL PUNTAJE TOTAL DE CADA JUGADOR. 
+        //BUCLE EXTERNO: SE OBTIENEN LOS PUNTAJES DE CADA TIRO SEGUN LA DISTANCIA INGRESADA POR EL USUARIO, ESTOS SE SUMAN PARA GENERAR EL PUNTAJE TOTAL. 
+        //BUCLE INTERNO (de nuevo): ESTOS VALORES OBTUVIDOS SE ALMACENAN EN LA LISTA DE PUNTAJES. SE REPETIRÁ ESTE PROCESO PARA CADA PARTICIPANTE
         for (int i = 0; i < numeroJugadores; i++) // Para iterar por todos los elementos de algo la condicion debe ser 0 < nombre
         {
             int puntajeTotalDelJugador  = 0; //Variable que almacenará la suma de los 3 puntajes para cada jugador. Al hacer eso se almacenará en la lista. Se repetirá por cada jugador restante.
             
-            // Bucle interno que con la distancia de los 3 tiros puntuará a cada jugador. Este bucle iterará una vez por cada tiro existente en el juego, es decir 3 veces por cada jugador
+            // Bucle interno que se ejecuta por cada tiro realizado. Obtiene la puntuacion de cada uno y luego suma las 3 para obtener el total del puntaje de este jugador iterado en el bucle completo.
             for (int j = 0; j < 3; j++) //Se ejecutará 3 veces (3 tiros) para los valores de 0, 1 y 2.
             {
                 System.out.println("Ingrese la distancia del tiro " + (j + 1) + " para " + nombres.get(i) + ":"); //Via get() obtenemos el nombre. Es equivalente nombres[i] en C# o JS.
