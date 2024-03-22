@@ -23,7 +23,7 @@ public class TpOcho {
 		
 		//Devolución de resultados.
 		System.out.println("El producto entre ambos numeros es: " + producto);
-		System.out.println("La division entre ambos numeros es: " + division);
+		System.out.println("El cociente entre ambos numeros es: " + division);
 		System.out.println("La suma entre ambos numeros es: " + suma);
 		System.out.println("La resta entre ambos numeros es: " + resta);
 	}

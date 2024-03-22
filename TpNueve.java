@@ -18,7 +18,7 @@ public class TpNueve {
 		int gradosRestantes = 180 - anguloUno - anguloDos;
 		
 		//Devolución del último angulo.
-		System.out.println("El valor del ultimo angulo es: " + gradosRestantes);
+		System.out.println("El valor del último ángulo es: " + gradosRestantes);
 	} 
 
 }

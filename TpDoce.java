@@ -10,7 +10,7 @@ public class TpDoce {
 	public static void main(String[] args) 
 	{
 		//Instrucciones para el usuario.
-		System.out.println("Ingresa dos numeros. Se te indicara cual es mayor.");
+		System.out.println("Ingresa dos números. Se te indicara cuál es mayor.");
 		
 		//Variables que almacenarán los dos numeros brindados por el usuario.
 		int primerNumero = scanner.nextInt();
@@ -25,6 +25,7 @@ public class TpDoce {
 		{
 			System.out.println(segundoNumero + " es el mayor");
 		}
+		
 	}
 
 }
