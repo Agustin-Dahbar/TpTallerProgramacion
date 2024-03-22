@@ -8,15 +8,24 @@ public class Tp21 {
 	
 	public static void main(String[] args) 
 	{
-		System.out.println("Elige un número entre 1 y 7");
-		int numero = scanner.nextInt();
-		String diaDeLaSemana = "valor temporal usado para que la PC no asigne cosas indeseadas a esta variable y genere problemas";
 		
-		//Sentencia if que analiza si el numero esta entre 1 y 7. Si lo esta ejecuta una sentencia switch que itera por los 7 valores
-		//posibles y en cada uno le da el valor correspondiente de dia de la semana, además de imprimirlo.
-		if(numero >= 1 && numero <= 7) 
+		System.out.println("Elige un número entre 1 y 7");
+		int numero = 0;
+		
+		//Bucle while para que el usuario tenga oportunidad de reingresar el número hasta que sea el indicado.
+		while(numero < 1 && numero > 7)
 		{
-			switch (numero) {
+			System.out.println("Reingrese el valor. Tiene que ser entre 1 y 7 como indiqué.");
+			numero = scanner.nextInt();
+		}
+		
+		
+		
+		String diaDeLaSemana = "valor temporal usado para que la PC no asigne cosas indeseadas a esta variable y genere problemas";
+		//Sentencia if que analiza si el numero esta entre 1 y 7. Si lo esta ejecuta una sentencia switch que itera por los 7 valores
+		//posibles y en cada uno le da el valor correspondiente de dia de la semana, además de imprimirlo.		
+			switch (numero) 
+			{
 	            case 1:
 	                diaDeLaSemana = "Domingo";
 	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
@@ -46,13 +55,6 @@ public class Tp21 {
 	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
 	                break;
 			}
-		}
-		else 
-		{
-			System.out.println("Error. Dije entre 1 y 7.");
-		}
-		
-		
 	}
 }
 

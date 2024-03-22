@@ -9,12 +9,18 @@ public class Tp20 {
 	public static void main(String[] args) 
 	{
 		//Tipado char. Almacena un único caracter.
-		System.out.println("Por favor..Ingresa la operacion a realizar");
+		System.out.println("Por favor..Ingresa la operacion a realizar.");
 		char operacion = scanner.next().charAt(0);
 		
+		while(operacion != '+' && operacion != '-' && operacion != '/' && operacion != '*') 
+		{
+			System.out.println("Por favor ingresa un caracter correcto. ");
+			operacion = scanner.next().charAt(0);
+		}
+		
 		//Declaramos dos grupos de variables para almacenar los numeros. ya que las division dan con coma, debemos usar double en ellas.
-		double numUnoDivision = 0;
-		double numDosDivision = 0;
+		double numUnoCaseDivision = 0;
+		double numDosCaseDivision = 0;
 		int numUno = 0; 
 		int numDos = 0;
 		
@@ -24,8 +30,8 @@ public class Tp20 {
 		//Si la operacion es division, los numeros que ingrese se almacenarán en las variables double's.
 		if(operacion == '/') 
 		{
-			numUnoDivision = scanner.nextDouble();
-			numDosDivision = scanner.nextDouble();
+			numUnoCaseDivision = scanner.nextDouble();
+			numDosCaseDivision = scanner.nextDouble();
 		}
 		else  //Si es != a / se almacenarán en las int's.
 		{
@@ -50,9 +56,9 @@ public class Tp20 {
 		}
 		else if(operacion == '/') //Division
 		{ 
-			if(numUnoDivision != 0 && numDosDivision != 0) //Si ninguno de los numeros son 0, se realiza la división correctamente.
+			if(numUnoCaseDivision != 0 && numDosCaseDivision != 0) //Si ninguno de los numeros son 0, se realiza la división correctamente.
 			{
-				resultadoDivision = numUnoDivision / numDosDivision;
+				resultadoDivision = numUnoCaseDivision / numDosCaseDivision;
 				System.out.println("El resultado de la operación seleccionada entre ambos números es: " + resultadoDivision);
 			}
 			else //Si son 0 no se realiza.
