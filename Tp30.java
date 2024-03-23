@@ -8,17 +8,23 @@ public class Tp30 {
 	{
 		Scanner scanner = new Scanner(System.in);
 		
-		// Bucle para realizar varias operaciones
-        while (true) {
+		// Bucle que anidará todo el programa para que se repita hasta que llegue al break indicado.
+        while (true) 
+        {
             // Solicitar la operación al usuario
             System.out.println("Ingrese la operación a realizar (+, -, *, /) o 'F' para finalizar:");
-            char operacion = scanner.next().charAt(0);
+            char operacion = scanner.next().charAt(0); //Obtenemos el caracter indicando la operacion o el fin del programa.
 
-            // Comprobar si se desea finalizar el programa
+            // Comprobar si se desea finalizar el programa (si es F)
             if (operacion == 'F' || operacion == 'f') 
             {
                 System.out.println("Finalizando el programa...");
                 break; // Este break se utiliza para salir del bucle while. 
+            }
+            while(operacion != '+' && operacion != '-' && operacion != '/' && operacion != '*') 
+            {
+            	System.out.println("Ingrese una operación correcta. Son 4 las aritméticas disponibles.");
+            	operacion = scanner.next().charAt(0);
             }
 
             // Solicitar dos números enteros
@@ -48,8 +54,6 @@ public class Tp30 {
                         System.out.println("Error: No se puede dividir por cero.");
                     }
                     break; //Estos break se utilizan para salir del switch.
-                default:
-                    System.out.println("Operación no válida."); //Si el programa recibe un caracter que no sean los 4 del switch o la F mostrará este aviso.
             }
         }
 
