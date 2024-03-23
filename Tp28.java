@@ -10,10 +10,10 @@ public class Tp28 {
 	{
 		//Instrucciones y almacen de valores.
 		System.out.println("Ingresa un numero entero. Reflejará la cantidad de números que se te pedirá que ingreses.");
-		int cantidadDeNumerosIngresados = scanner.nextInt();
+		int cantidadDeNumerosAIngresar = scanner.nextInt();
 		
 		//Nuevas instrucciones
-		System.out.println("Ingresa " + cantidadDeNumerosIngresados + " numeros. Te diré cual es el numero más grande de tu selección.");
+		System.out.println("Ingresa " + cantidadDeNumerosAIngresar + " numeros. Te diré cual es el numero más grande de tu selección.");
 		
 		//Declaramos y asignamos la variable que al final almacenará al número más grande. Ahora, La asignamos con el menor posible.
 		int posicionNumeroMasGrande = 0; //Variable que almacenará la posicion del numero mas grande.
@@ -24,7 +24,7 @@ public class Tp28 {
 		//Bucle en el que imprimiremos al usuario la instruccion y el espacio para ingresar los numeros. Luego de esto comprobaremos cuál
 		//es el numero mas grande de todos los que se iterarán al ser entrados por el usuario. El primer numero ingresado se tomará
 		//si o si como nuevo valor de numeroMasGrande ya que esta var habia sido inicializada con MIN_VALUE, por lo que cualquier caso dará TRUE.
-		for (int i = 1; i <= cantidadDeNumerosIngresados; i++) 
+		for (int i = 1; i <= cantidadDeNumerosAIngresar; i++) 
 		{ 
             System.out.println("Numero " + (i) + ":"); 
             int numero = scanner.nextInt();
