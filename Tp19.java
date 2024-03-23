@@ -26,7 +26,7 @@ public class Tp19 {
         {
 	            esImpar = true;
         }
-		if(numero < 10 && numero % 2 != 0) 
+		if(esDeUnSoloDigito == true && esImpar == true) 
 		{
 			estaEnAmbosGrupos = true;
 		}
