@@ -37,7 +37,6 @@ public class Tp38Mejorado {
 				if(intentos == 1) 
 				{
 					System.out.println("Credenciales correctas. Ingresadas en " + intentos + " intento."); 
-					break;
 				}
 				else 
 				{
