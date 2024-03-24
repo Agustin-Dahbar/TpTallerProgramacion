@@ -9,13 +9,13 @@ public class Tp39 {
         
 		Scanner scanner = new Scanner(System.in);
 
-		//Variable en la que el usuario ingresará la cantidad de jugadores. Se usará un bucle while para repetir infinitamente en caso de que haya ingresado menos que 2. 
-		int numeroJugadores = 0; //Debemos asignarla con numeros negativos, 0 o 1 para que se ejecute el while. 2 o mas cancelaria ese bucle y pasariamos directamente a la asignacion de nombres y la cantidad de participantes sería el valor que le hayamos asignado a la variable.
-
 		//INGRESO DE CANTIDAD DE JUGADORES
+		System.out.println("Ingrese la cantidad de jugadores");
+		int numeroJugadores = scanner.nextInt();
+
         while (numeroJugadores < 2) //Bucle while. Se ejecutará si se ingresaron menos de 2 jugadores. 
         {
-            System.out.println("Ingrese la cantidad de jugadores. Deben ser al menos 2. En caso de que seleccione menos, se repetirá este proceso.");
+            System.out.println("Dato incorrecto. Deben ser al menos 2.");
             numeroJugadores = scanner.nextInt(); //Le pedimos al usuario que ingrese la cant de participantes. Hasta que no entre 2 o más se repetirá el bucle ya que se seguirá cumpliendo la condicion.
             scanner.nextLine(); // Limpiamos el buffer
         }
