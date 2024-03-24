@@ -11,7 +11,7 @@ public class Tp36 {
 		
 		int nota = 0; //Entrada del usuario 
 		double sumaDeNotas = 0; // La suma total de las entradas iteradas (para sacar el promedio)
-		int cantidadDeEntradas = 0; //Cuenta de valores ingresados. (será el divisor para sacar el promedio)
+		int notasIngresadas = 0; //Cuenta de valores ingresados. (será el divisor para sacar el promedio)
 		double promedio = 0; 
 		
 		
@@ -21,18 +21,19 @@ public class Tp36 {
 		{
 			nota = scanner.nextInt(); //Almacenamos la nota ingresada
 			sumaDeNotas += nota; //Sumamos el valor de las notas para que el promedio se realice de forma correcta
-			cantidadDeEntradas++; //Aumentamos un valor por cada iteración a la cantidad de entradas.
-			promedio = sumaDeNotas / cantidadDeEntradas; // calculamos el promedio via division entre las notas y la cantidad de ingresos
+			notasIngresadas++; //Aumentamos un valor por cada iteración a la cantidad de entradas.
+			promedio = sumaDeNotas/notasIngresadas;
 			
-			if(promedio < 20) //Esta condicional logra que al superar el promedio se imprima solo la linea de codigo 35 y no ambas. 
-			{
+			if(promedio < 20) //Solucionamos el problema ocasionado porque la condición este al final de que se impriman una vez más cosas que no queremos.
+			{				  //A partir de ahora simplemente se debe dejar a lo último esa instrucción que no queremos agregar una última vez y encerrarla en un if que tenga
+							  // la misma condición que el while.
 			System.out.println("El promedio actual es " + promedio + ". Aún pudes continuar");
 			}
 			
 		}
 		while(promedio < 20); //Si el promedio es menor a 20, se seguirá permitiendo que el usuario entre numeros.
 		
-		System.out.println("No puedes continuar ya que superaste el promedio límite. Lo dejaste en " + promedio);
+		System.out.println("La cantidad de notas leídas fue de " + notasIngresadas + "No puedes continuar ya que superaste el promedio límite. Lo dejaste en " + promedio);
 	}
 
 }

@@ -15,7 +15,7 @@ public class Tp35 {
 		int edadMasJoven = Integer.MAX_VALUE; //Le damos el máximo valor posible para asegurarnos que en la primer iteracion su valor sea sustituido por el ingresado por el usuario.
 	
 		//Instrucciones
-		System.out.println("Te pediré que ingreses nombre y edad de múltiples personas. Te diré cual es el nombre de la más joven. Para finalizar usa un * en el nombre.");
+		System.out.println("Te pediré que ingreses nombre y edad de múltiples personas. Te diré cual es el nombre de la más joven. Para finalizar inserta un *.");
 		
 		//Bucle do while. TRUE al while para que se ejecute automaticamente y ya con el break nos encargamos de finalizarlo cuando deseamos. 
 		do {
