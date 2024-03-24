@@ -2,7 +2,7 @@ package trabajopractico;
 
 import java.util.Scanner;
 
-public class Tp37 {
+public class Tp37Malo {
 
     public static void main(String[] args) {
 
