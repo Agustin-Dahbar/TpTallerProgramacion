@@ -12,7 +12,7 @@ public class Tp39Mejorado {
         String nombreGanador = ""; //Variable que almacenará el nombre del ganador. 
         int puntajeMaximo = 0; //Variable que almacenará el puntaje máximo.
         int tirosAlCentro = 0; //Variable que almacenará los tiros al centro.
-
+        
         //Instrucción y entrada de cant de jugadores.
         System.out.println("Ingresa la cantidad de jugadores.");
         int numeroJugadores = scanner.nextInt(); //Variable que tendrá la cantidad de jugadores.
@@ -35,7 +35,7 @@ public class Tp39Mejorado {
            //Creamos un FOR INTERNO que iterará por los tiros de cada jugador (siempre serán 3). Obtendremos el valor de cada tiro para sumarlos a los 3 y saber su puntaje total.
             for (int j = 0; j < 3; j++) 
             {
-                System.out.println("Ingrese la distancia del tiro " + (j + 1) + " para " + nombre + ":"); // Le debemos sumar uno a J ya que se inicializó con 0 en su declaración.
+                System.out.println("Ingrese la distancia del tiro " + (j + 1) + " del jugador " + nombre + ":"); // Le debemos sumar uno a J ya que se inicializó con 0 en su declaración.
                 int distancia = scanner.nextInt(); //Indicamos la distancia del tiro con respecto al centro. Este valor entrado por el usuario será el argumento de una función.
                 scanner.nextLine(); // Limpiamos el buffer
 
@@ -56,22 +56,39 @@ public class Tp39Mejorado {
             }
         }
 
+        //En los bucles hay variables privadas que se declararon allí que son trascendentales para la obtención de los valores que tendrán las variables de salida finales.
+        //Ejs: 
+        // "distancia" almacenará la distancia del tiro con respecto al centro para obtener un valor de puntuación siendo argumentada en una función.
+        //"puntajePorTiro" que almacenará el puntaje de cada tiro obtenido mediante la función y su argumento recién explicados.
+        //"puntajeTotalDelJugador" que almacenará la suma de los 3 tiros, es decir sumará todos los valores que obtendrá "puntajePorTiro". Luego comparará esta variable de todos los 
+        //jugadores, la mayor írá a "puntajeMaximo"
+        //Y luego nombre que almacenará todos los nombres de los jugadores para en el mismo bloque IF en el que se averigua el puntaje maximo, también se averigua el nombre de quien tiene ese puntajeMaximo.
+        //Por que nombre esta en el bucle externo y los tiros en el interno? Porque por cada jugador hay un nombre y 3 tiros, esto hace imposible que este en el mismo bucle, cada uno 
+        //necesita diferentes repeticiones. Es por eso además que seleccione el bucle for, el ideal para este caso, especialmente para el interno donde se sabe que solo serán 3 ciclos.
+        
         //Ya fuera de los bucles devolvemos la información obtenida en ellos (puntajeMaximo y nombreGanador).
         System.out.println("El ganador del torneo es: " + nombreGanador + " con un puntaje de " + puntajeMaximo);
         System.out.println("La cantidad total de tiros al centro es: " + tirosAlCentro);
-
         scanner.close();
     }
 
-    //Funcion que llamamos para que averigue el puntaje de cada tiro. Es llamada 3 veces, sumamos sus 3 returns para almacenar el resultado en puntajeTotalDelJugador.
-    public static int calcularPuntaje(int distancia) {
-        if (distancia == 0) {
+    //Función que llamamos para que averigue el puntaje de cada tiro. Es llamada 3 veces, sumamos sus 3 returns para almacenar el resultado en puntajeTotalDelJugador.
+    public static int calcularPuntaje(int distancia) 
+    {
+        if (distancia == 0) 
+        {
             return 500;
-        } else if (distancia <= 10) {
+        } 
+        else if (distancia <= 10) 
+        {
             return 250;
-        } else if (distancia <= 50) {
+        } 
+        else if (distancia <= 50) 
+        {
             return 100;
-        } else {
+        } 
+        else 
+        {
             return 0;
         }
     }

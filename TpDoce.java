@@ -21,9 +21,13 @@ public class TpDoce {
 		{
 			System.out.println(primerNumero + " es el mayor"); //Se ejecuta este bloque de código
 		}
-		else //Si no, se ejecuta el siguiente..
+		else if(segundoNumero > primerNumero)//Si no, se ejecuta el siguiente..
 		{
 			System.out.println(segundoNumero + " es el mayor");
+		}
+		else 
+		{
+			System.out.println("Son iguales");
 		}
 		
 	}
