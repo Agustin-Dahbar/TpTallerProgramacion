@@ -14,7 +14,7 @@ public class Tp37Mejorado {
 		int sueldoTotal = 0;
 		int meses = 0;
 		
-		while(sueldo >= 0) //Bucle while que permitirá el ingreso de los sueldos por parte del usuario. 
+		while(sueldo >= 0 && meses < 12) //Bucle while que permitirá el ingreso de los sueldos por parte del usuario. 
 		{
 			sueldo = scanner.nextInt(); //Entrada del usuario que determinará si se ejecuta o no el resto del bloque del código.
 			
@@ -23,10 +23,12 @@ public class Tp37Mejorado {
 			{				
 			sueldoTotal += sueldo;
 			meses++;
+			System.out.println("El sueldo parcial es " + sueldoTotal);
 			}
 			//Simula ser un break con la != de que el corte es programado por nosotros en la iteración deseada y no cuando llegué por primera vez.
 			
 		}
+		//FIN BUCLE WHILE.
 		
 		System.out.println("El sueldo total es " + sueldoTotal + " y se obtuvo en " + meses + " meses."); 
 	}
