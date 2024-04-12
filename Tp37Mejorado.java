@@ -18,7 +18,7 @@ public class Tp37Mejorado {
 		{
 			sueldo = scanner.nextInt(); //Entrada del usuario que determinará si se ejecuta o no el resto del bloque del código.
 			
-			//Ingresamos esta sentencia if para que en la última iteración donde el usuario cancela el programa, no se ejecuten estas dos líneas.
+			//Ingresamos esta sentencia if para que en la última iteración donde el usuario cancela el programa con un número negativo, no se ejecuten estas dos líneas y no se reste ese número negativo a la suma ni se cuente ese ingreso como un mes.
 			if(sueldo >= 0)   
 			{				
 			sueldoTotal += sueldo;

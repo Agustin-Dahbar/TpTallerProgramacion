@@ -44,5 +44,17 @@ public class Tp27 {
 		{
 			System.out.println("Esta edad es mayor de 18 y además es impar."); //Si es TRUE, este metodo devolverá esta linea en la consola.
 		}
+		else if(edad > 18) 
+		{
+			System.out.println("Esta edad es mayor a 18 pero no es impar.");
+		}
+		else if(edad % 2 != 0) 
+		{
+			System.out.println("Esta edad es impar y menor a 18");
+		}
+		else 
+		{
+			System.out.println("Ni es mayor ni es impar.");
+		}
 	}
 }

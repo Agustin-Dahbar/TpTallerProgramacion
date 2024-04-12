@@ -13,7 +13,7 @@ public class Tp30 {
         {
             // Solicitar la operación al usuario
             System.out.println("Ingrese la operación a realizar (+, -, *, /) o 'F' para finalizar:");
-            char operacion = scanner.next().charAt(0); //Obtenemos el caracter indicando la operacion o el fin del programa.
+            char operacion = scanner.next().charAt(0); //Obtenemos el carácter que indicará operación o fin del programa.
 
             // Comprobar si se desea finalizar el programa (si es F)
             if (operacion == 'F' || operacion == 'f') 
@@ -34,7 +34,8 @@ public class Tp30 {
             int numero2 = scanner.nextInt();
 
             // Ya que solo hay 4 opciones conocidas por nosotros usamos un switch que cambiará el valor de operacion.
-            switch (operacion) {
+            switch (operacion) 
+            {
                 case '+':
                     System.out.println("Resultado: " + (numero1 + numero2));
                     break;
@@ -45,7 +46,7 @@ public class Tp30 {
                     System.out.println("Resultado: " + (numero1 * numero2));
                     break;
                 case '/':
-                    if (numero2 != 0) //En el caso de la division desarrollamos una logica para verificar que el divisor no sea 0. 
+                    if (numero2 != 0) //En el caso de la division desarrollamos una lógica para verificar que el divisor no sea 0. 
                     { 
                         System.out.println("Resultado: " + (numero1 / numero2));
                     } 

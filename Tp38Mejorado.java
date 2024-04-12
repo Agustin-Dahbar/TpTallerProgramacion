@@ -32,8 +32,10 @@ public class Tp38Mejorado {
 			
 			intentos++; //Agregamos el intento para imprimirlo en las dos posibles salidas.
 			
-			if(nombreIngresado.equals(nombreIngresado) && passwordIngresada == password) //Si esto es TRUE. Se saldrá del bucle ya que no se cumple la condición del while.
+			//If que comprueba si los datos son correctos. Si lo son se saldrá del bucle por no cumplirse la condición.
+			if(nombreIngresado.equals(nombreIngresado) && passwordIngresada == password) 
 			{
+			//Si los datos fueron correctos bifurcamos en 2 la impresión en consola. En singular si fue un intento o en plural para el resto (2,3)
 				if(intentos == 1) 
 				{
 					System.out.println("Credenciales correctas. Ingresadas en " + intentos + " intento."); 

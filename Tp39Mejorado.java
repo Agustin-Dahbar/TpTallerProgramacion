@@ -23,7 +23,9 @@ public class Tp39Mejorado {
             numeroJugadores = scanner.nextInt();
             scanner.nextLine(); // Limpiamos el buffer
         }
-
+        //Uso dos entradas y no repito la primera para poder tener 2 salidas de texto diferentes. La instrucción inicial y la respuesta al mal ingreso. Si reducieramos el código se repetiria la misma entrada dentro del while.
+        
+        
         //Creamos un BUCLE FOR EXTERNO que iterará por los jugadores (es decir, una vez por cada jugador). Para así poder darles un nombre a cada uno y analizar el puntaje de cada uno 
         //para identificar si es el mayor hasta ahora o no.
         for (int i = 0; i < numeroJugadores; i++) 

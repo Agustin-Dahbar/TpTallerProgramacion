@@ -9,11 +9,12 @@ public class Tp20 {
 	public static void main(String[] args) 
 	{
 		//Tipado char. Almacena un único caracter.
-		System.out.println("Por favor..Ingresa la operacion a realizar.");
-		char operacion = scanner.next().charAt(0);
+		System.out.println("Por favor..Ingresa la operacion a realizar.");		
+		char operacion = scanner.next().charAt(0); // Variable char que almacenarpa UN SOLO CARÁCTER.
 		
+		//Bucle while que evaluará el contenido de la variable. Si no es uno de los 4 valores aritméticos, se repetirá el pedido de entrada.
 		while(operacion != '+' && operacion != '-' && operacion != '/' && operacion != '*') 
-		{
+		{ 
 			System.out.println("Por favor ingresa un caracter correcto. ");
 			operacion = scanner.next().charAt(0);
 		}
@@ -24,7 +25,7 @@ public class Tp20 {
 		int numUno = 0; 
 		int numDos = 0;
 		
-		//Instruccion y almacen de datos
+		//Instrucción y almacen de datos
 		System.out.println("Ahora ingresar los dos numeros enteros que se operarán en ella..");
 		
 		//Si la operacion es division, los numeros que ingrese se almacenarán en las variables double's.
@@ -44,6 +45,7 @@ public class Tp20 {
 		int resultado = 0;
 		double resultadoDivision = 0;
 		
+		
 		if (operacion == '+') //Suma
 		{
 			resultado = numUno + numDos;
@@ -54,7 +56,7 @@ public class Tp20 {
 			resultado = numUno - numDos;
 			System.out.println("El resultado de la operación seleccionada entre ambos números es: " + resultado);
 		}
-		else if(operacion == '/') //Division
+		else if(operacion == '/') //División
 		{ 
 			if(numUnoCaseDivision != 0 && numDosCaseDivision != 0) //Si ninguno de los numeros son 0, se realiza la división correctamente.
 			{

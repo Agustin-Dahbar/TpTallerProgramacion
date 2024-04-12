@@ -22,7 +22,7 @@ public class Tp22 {
 		System.out.println("Finalizó la primer vuelta realizada por el do..while"); //Mensaje para el usuario
 		
 		//Bucle for para variar, realizará el el sentido opuesto
-		for(int i = 0; i <= 4 ; i++)
+		for(int i = 0; i < 5 ; i++)
 		{
 			numero--; //En la línea 20 se explica porque antes del println.
 			System.out.println("El valor del numero es: " + numero );
