@@ -8,10 +8,10 @@ public class Tp39Mejorado {
 
         Scanner scanner = new Scanner(System.in);
 
-        //Variables de salida que usaremos en el programa.
+        //Variables de salida que usaremos en el programa. Las primeras dos se averiguan en el if de la línea 54.
         String nombreGanador = ""; //Variable que almacenará el nombre del ganador. 
-        int puntajeMaximo = 0; //Variable que almacenará el puntaje máximo.
-        int tirosAlCentro = 0; //Variable que almacenará los tiros al centro.
+        int puntajeMaximo = Integer.MIN_VALUE; //Variable que almacenará el puntaje máximo. Lo inicializamos asi para que en el primer caso el puntajeTotalDelJugador sea mayor y ya obtenga un nuevo valor para compararse.
+        int tirosAlCentro = 0; //Variable que almacenará los tiros al centro. If de la línea 47.
         
         //Instrucción y entrada de cant de jugadores.
         System.out.println("Ingresa la cantidad de jugadores.");
@@ -26,13 +26,13 @@ public class Tp39Mejorado {
         //Uso dos entradas y no repito la primera para poder tener 2 salidas de texto diferentes. La instrucción inicial y la respuesta al mal ingreso. Si reducieramos el código se repetiria la misma entrada dentro del while.
         
         
+        int puntajeTotalDelJugador = 0; //Variable que almacenará la puntuación total de cada jugador.
         //Creamos un BUCLE FOR EXTERNO que iterará por los jugadores (es decir, una vez por cada jugador). Para así poder darles un nombre a cada uno y analizar el puntaje de cada uno 
         //para identificar si es el mayor hasta ahora o no.
-        for (int i = 0; i < numeroJugadores; i++) 
+        for (int i = 0; i < numeroJugadores; i++) //Para iterar por la misma cantidad de veces que otra cosa debemos usar < si lo comparamos con 0, y <= si lo comparamos con 1. En este caso < ya que i vale 0. 
         {
-            System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":");
-            String nombre = scanner.nextLine();
-            int puntajeTotalDelJugador = 0;
+            System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":"); //Sumamos uno para obtener el número deseado, recordemos que i vale 0.
+            String nombre = scanner.nextLine(); //Entrada del nombre del jugador.
             
            //Creamos un FOR INTERNO que iterará por los tiros de cada jugador (siempre serán 3). Obtendremos el valor de cada tiro para sumarlos a los 3 y saber su puntaje total.
             for (int j = 0; j < 3; j++) 
@@ -46,11 +46,11 @@ public class Tp39Mejorado {
 
                 if (distancia == 0) //Sentencia IF que identifica los tiros al centro. 
                 {
-                    tirosAlCentro++;
+                    tirosAlCentro++; //Si se ejecuta sumamos un tiro al centro. ++ == +1
                 }
             }
 
-            //Habiendo obtenido el puntajeTotalDelJugador volvemos al bucle externo para verificar si es la máxima puntuación hasta ahora..
+            //Habiendo obtenido el puntajeTotalDelJugador volvemos al bucle externo para verificar si es la máxima puntuación hasta ahora comparandola con otros puntajeTotalDeJugador..
             if (puntajeTotalDelJugador > puntajeMaximo) 
             {												
                 puntajeMaximo = puntajeTotalDelJugador; //Actualizamos el puntaje máximo.
@@ -77,19 +77,19 @@ public class Tp39Mejorado {
     //Función que llamamos para que averigue el puntaje de cada tiro. Es llamada 3 veces, sumamos sus 3 returns para almacenar el resultado en puntajeTotalDelJugador.
     public static int calcularPuntaje(int distancia) 
     {
-        if (distancia == 0) 
+        if (distancia == 0) // 0
         {
             return 500;
         } 
-        else if (distancia <= 10) 
+        else if (distancia <= 10) //10 0 menos
         {
             return 250;
         } 
-        else if (distancia <= 50) 
+        else if (distancia <= 50) //50 o menos
         {
             return 100;
         } 
-        else 
+        else //51 0 más
         {
             return 0;
         }
