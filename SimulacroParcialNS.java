@@ -12,16 +12,15 @@ public class SimulacroParcialNS
 		double minutosTotales = 0; //Almacenará el total de los minutos para sacar el promedio (uno de los requisitos). 
 		//La tipamos con double para aceptar segundos y que el promedio sea lo más exacto posible.
 		
-		//Variables que representan los 3 requisitos del atleta para que este apto.
+		//Variables que representan 2 de los 3 requisitos del atleta para que este apto.
 		boolean masDe20Minutos = false; 
 		boolean menosDe15Minutos = false;
-		final double PROMEDIO;
 		
 		//Variables de salida final
 		double tiempoMinimo = Integer.MAX_VALUE; //La inicializamos con un max value para que cualquier dato ingresado al comienzo sea menor y se cumpla lo que deseamos que es que obtenga el primer valor con el que se compare que serán los minutos ingresados.
 		int diaDeRecord = 0; //Almacenaremos númericamente el dia en el que se hizó el tiempo más bajo.
 		
-		//While que ejecutará el programa. Siempre y cuando estemos entre los 10 días de prueba 
+		//While externo que ejecutará el programa. Siempre y cuando estemos entre los 10 días de prueba 
 		//y el atleta no se haya demorado más de 20 minutos en alguna prueba ya que eso descartaria que este apto.
 		while(diasTotales < 10 && !masDe20Minutos) 
 		{
@@ -29,7 +28,7 @@ public class SimulacroParcialNS
 			System.out.println("Ingresa los minutos de la prueba realizada para el día " + (diasTotales + 1));
 			double minutosPrueba = scanner.nextInt();
 			
-			//While que repetirá el pedido de entrada si los minutos ingresados son incorrectos.
+			//While interno que repetirá el pedido de entrada si los minutos ingresados son incorrectos.
 			while(!(minutosPrueba > 0 && minutosPrueba < 100)) //Explicación del ! en la condición del while: 
 																	//-La condición dice: Si minutosPrueba es mayor a 0 y menor a 100 es decir entre 1 y 99 inclusives. Pero eso esta predecedido de un ! que indica invertir el caso. Entonces el while se ejecutará cuando NO SUCEDA lo de la condición es decir cuando sea DIFERENTE (!) a la condición que es entre 1 y 99, En resumen, cuando NO SEA entre 1 y 99.
 			{
@@ -63,10 +62,10 @@ public class SimulacroParcialNS
 			//y que Mas20 nunca suceda y se mantenga en false, ya que inicializamos ambas en FALSE.
 		}
 		
-		//Realizamos la obtención del promedio.
-		PROMEDIO = minutosTotales/(diasTotales); 
+		//Declaramos el promedio y realizamos su obtención (el último requisito para conocer su aptitud).
+		final double PROMEDIO = minutosTotales/(diasTotales); 
 		
-		//Ya obtenidos todos los datos necesarios hacemos la evaluación final fuera del while.
+		//Ya obtenidos todos los datos necesarios hacemos la evaluación de aptitud fuera del while.
 		if(menosDe15Minutos && !masDe20Minutos && PROMEDIO <= 18) //Si menosDe15Minutos == true y masDe20Minutos == false (por el ! que indica diferente o inverso) y PROMEDIO menor o igual a 18.
 		{
 			System.out.println("Esta apto. Su menor tiempo fue " + tiempoMinimo + " minutos y lo logró en el día " + diaDeRecord + ". Su promedio fue de " + PROMEDIO + " minutos" ); //Ahora no necesitamos el -1 ya que esta es la variable que almacenaba el valor habiendo usado el menos uno, es diasTotales a la que se le debe restar un valor.
@@ -83,7 +82,7 @@ public class SimulacroParcialNS
 		}
 		if(PROMEDIO > 18) //Si PROMEDIO es mayor 18.
 		{
-			System.out.println("No cumple con el promedio");
+			System.out.println("No cumple con el promedio. Dió " + PROMEDIO + " no podía superar 18");
 		}
 		if(!menosDe15Minutos) //Si var es false
 		{
