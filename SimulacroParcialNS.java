@@ -18,7 +18,7 @@ public class SimulacroParcialNS
 		final double PROMEDIO;
 		
 		//Variables de salida final
-		int tiempoMinimo = Integer.MAX_VALUE; //La inicializamos con un max value para que cualquier dato ingresado al comienzo sea menor y se cumpla lo que deseamos que es que obtenga el primer valor con el que se compare que serán los minutos ingresados.
+		double tiempoMinimo = Integer.MAX_VALUE; //La inicializamos con un max value para que cualquier dato ingresado al comienzo sea menor y se cumpla lo que deseamos que es que obtenga el primer valor con el que se compare que serán los minutos ingresados.
 		int diaDeRecord = 0; //Almacenaremos númericamente el dia en el que se hizó el tiempo más bajo.
 		
 		//While que ejecutará el programa. Siempre y cuando estemos entre los 10 días de prueba 
@@ -27,7 +27,7 @@ public class SimulacroParcialNS
 		{
 			//Instrucciones e ingreso de los minutos que demoró el atleta en la prueba.
 			System.out.println("Ingresa los minutos de la prueba realizada para el día " + (diasTotales + 1));
-			int minutosPrueba = scanner.nextInt();
+			double minutosPrueba = scanner.nextInt();
 			
 			//While que repetirá el pedido de entrada si los minutos ingresados son incorrectos.
 			while(!(minutosPrueba > 0 && minutosPrueba < 100)) //Explicación del ! en la condición del while: 
