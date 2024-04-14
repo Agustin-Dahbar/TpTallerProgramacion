@@ -45,8 +45,7 @@ public class Tp38Mejorado {
 			menos3Intentos = intentos < 3; //Evalúa si los intentos son menos que 3. Deben serlo para que se siga cumpliendo el bucle while, una vez llegue a 3 dará FALSE, entonces no se ejecutará una 4ta vez y rompemos la repetición del while por el lado de los intentos.
 			
 			//Evaluamos los datos entrados. El valor obtenido se evaluará en el while como una de las condiciones para ejecutarse o no.
-			credencialesCorrectas = nombreIngresado.equals(nombre) && passwordIngresada == password;
-			
+			credencialesCorrectas = nombreIngresado.equals(nombre) && passwordIngresada == password;	
 		}
 		
 		//Si salimos del bucle se debe a uno de dos motivos, porque accedimos correctamente o porque fallamos los 3 intentos. 
