@@ -38,7 +38,7 @@ public class Tp39Mejorado {
             String nombre = scanner.nextLine(); //Entrada del nombre del jugador.
             
            //Creamos un FOR INTERNO que iterará por los tiros de cada jugador (siempre serán 3). Obtendremos el valor de cada tiro para sumarlos a los 3 y saber su puntaje total.
-            for (int j = 0; j < 3; j++) 
+            for (int tirosDelJugador = 1; tirosDelJugador <= 3; tirosDelJugador++) 
             {
                 System.out.println("Ingrese la distancia del tiro de " + nombre); // Le debemos sumar uno a J ya que se inicializó con 0 en su declaración.
                 int distancia = scanner.nextInt(); //Indicamos la distancia del tiro con respecto al centro. Este valor entrado por el usuario será el argumento de una función.
@@ -64,7 +64,7 @@ public class Tp39Mejorado {
                 nombreGanador = nombre; //Actualizamos el nombre del actual ganador.
             }
             
-            puntajeTotalDelJugador = 0; //Reiniciamos el puntaje para que cuando ahora comience la siguiente iteración del bucle externo, es decir la siguiente iteración de jugador, no tenga el puntaje del anterior cargado.
+            puntajeTotalDelJugador = 0; //Reiniciamos el puntaje para que ahora cuando comience la siguiente iteración del bucle externo, es decir la siguiente iteración de jugador, no tenga el puntaje del anterior cargado.
         }
 
         //En los bucles hay variables privadas que se declararon allí que son trascendentales para la obtención de los valores que tendrán las variables de salida finales.
