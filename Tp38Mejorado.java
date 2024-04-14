@@ -16,50 +16,63 @@ public class Tp38Mejorado {
 		String nombreIngresado = "hola";
 		int passwordIngresada = 0;
 		
-		//Intentos de log in. Al llegar a 3 se cancela el bucle while y no deja un 4to intento de login. 
-		int intentos = 0;
+		//Variable que almacenará si se realizaron 3 intentos.
+		boolean menos3Intentos = true;
+		boolean credencialesCorrectas = false;
 		
-		//Bucle do.. while. Se obtendrán los datos del usuario y se sumará un intento. Luego de esto se evaluarán los datos en un IF-ELSE IF-ELSE para continuar con el programa.
-		do 
+		System.out.println("Por favor, ingresa tu nombre de usuario");
+		nombreIngresado = scanner.nextLine();
+		
+		System.out.println("Ahora tu contraseña..");
+		passwordIngresada = scanner.nextInt();
+		
+		//Evaluamos si las credenciales son válidas mediante la ejecución de una condición en la variable booleana.
+		credencialesCorrectas = nombreIngresado.equals(nombre) && passwordIngresada == password; 
+		
+		int intentos = 1; //La inicializamos con uno debido a que ya se realizó un intento.
+		
+		//Bucle while que repetirá el ingreso en caso de que haya sido incorrecto o se hayan realizado menos de 3 intentos
+		while(!credencialesCorrectas && menos3Intentos) //Mientras credencialesCorrectas sea falso (es decir, mientras los datos ingresados no hayan sido correctos.
 		{
-			System.out.println("Por favor, ingresa tu nombre de usuario");
-			nombreIngresado = scanner.nextLine();
+			scanner.nextLine(); //Consumimos el caracter de nueva línea provocado por el enter, si no lo hacemos saltará una excepción.
+			System.out.println("Datos incorrectos. Reintentalo, comienza con el usuario..");
+			nombreIngresado = scanner.nextLine(); 
 			
-			System.out.println("Ahora tu contraseña..");
+			System.out.println("Ahora la password..");
 			passwordIngresada = scanner.nextInt();
 			
-			scanner.nextLine(); //Consumimos el caracter de nueva línea provocado por el enter, si no lo hacemos saltará una excepción.
+			intentos++; //Sumamos en el conteo de intentos.
+			menos3Intentos = intentos < 3; //Evalúa si los intentos son menos que 3. Deben serlo para que se siga cumpliendo el bucle while, una vez llegue a 3 dará FALSE, entonces no se ejecutará una 4ta vez y rompemos la repetición del while por el lado de los intentos.
 			
-			intentos++; //Agregamos el intento para imprimirlo en las dos posibles salidas.
+			//Evaluamos los datos entrados. El valor obtenido se evaluará en el while como una de las condiciones para ejecutarse o no.
+			credencialesCorrectas = nombreIngresado.equals(nombre) && passwordIngresada == password;
 			
-			//If que comprueba si los datos son correctos. Si lo son se saldrá del bucle por no cumplirse la condición.
-			if(nombreIngresado.equals(nombreIngresado) && passwordIngresada == password) 
+		}
+		
+		//Si salimos del bucle se debe a uno de dos motivos, porque accedimos correctamente o porque fallamos los 3 intentos. 
+		
+		//Caso en el que fallamos todos los intentos.
+		if(!menos3Intentos && !credencialesCorrectas) 
+		{
+			System.out.println("Lo siento.. Fallaste tu límite de 3 intentos..");
+		}
+		
+		
+		//Caso en el que accedido correctamente las credenciales.
+		if(credencialesCorrectas) 
+		{
+		//Sentencia if-else interna. Si los datos fueron correctos bifurcamos en 2 la impresión en consola. En singular o plural.
+			if(intentos == 1) 
 			{
-			//Si los datos fueron correctos bifurcamos en 2 la impresión en consola. En singular si fue un intento o en plural para el resto (2,3)
-				if(intentos == 1) 
-				{
-					System.out.println("Credenciales correctas. Ingresadas en " + intentos + " intento."); 
-				}
-				else 
-				{
-					System.out.println("Credeciales correctas. Ingresadas en " + intentos + " intentos.");	
-				}
-			}
-			else if(intentos == 3) 
-			{
-				System.out.println("Se ha bloqueado tu cuenta por alcanzar el límite de " + intentos + " intentos máximos."); 
-				break;
+				System.out.println("Credenciales correctas. Ingresadas en " + intentos + " intento."); 
 			}
 			else 
 			{
-				System.out.println("Credenciales incorrectas. Intentalo nuevamente.");
+				System.out.println("Credeciales correctas. Ingresadas en " + intentos + " intentos.");	
 			}
-			
 		}
-
-		while(!(nombreIngresado.equals(nombreIngresado) && passwordIngresada == password)); //Siempre se cumplirá por lo que deberemos
 		
-
-	}
 	
+}
+
 }
