@@ -29,7 +29,9 @@ public class Tp39Mejorado {
         int puntajeTotalDelJugador = 0; //Variable que almacenará la puntuación total de cada jugador.
         //Creamos un BUCLE FOR EXTERNO que iterará por los jugadores (es decir, una vez por cada jugador). Para así poder darles un nombre a cada uno y analizar el puntaje de cada uno 
         //para identificar si es el mayor hasta ahora o no.
-        scanner.nextLine();
+        
+        scanner.nextLine(); //Limpiamos buffer. Esto lo hacemos para evitar un error en la consola. (Impresión simultanea de los siguientes dos printnl()) 
+        
         for (int i = 0; i < numeroJugadores; i++) //Para iterar por la misma cantidad de veces que otra cosa debemos usar < si lo comparamos con 0, y <= si lo comparamos con 1. En este caso < ya que i vale 0. 
         {
             System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":"); //Sumamos uno para obtener el número deseado, recordemos que i vale 0.
