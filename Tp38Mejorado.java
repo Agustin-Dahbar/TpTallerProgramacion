@@ -16,17 +16,18 @@ public class Tp38Mejorado {
 		String nombreIngresado = "hola";
 		int passwordIngresada = 0;
 		
-		//Variable que almacenará si se realizaron 3 intentos.
+		//Variable booleanas que almacenarán información, las condiciones para el acceso o la repetición de entrada.
 		boolean menos3Intentos = true;
 		boolean credencialesCorrectas = false;
-		
+	
+		//Instruccion y entrada de datos. 
 		System.out.println("Por favor, ingresa tu nombre de usuario");
 		nombreIngresado = scanner.nextLine();
 		
 		System.out.println("Ahora tu contraseña..");
 		passwordIngresada = scanner.nextInt();
 		
-		//Evaluamos si las credenciales son válidas mediante la ejecución de una condición en la variable booleana.
+		//Evaluamos si las credenciales son válidas mediante la ejecución de la condición adecuada en la variable booleana correspondiente.
 		credencialesCorrectas = nombreIngresado.equals(nombre) && passwordIngresada == password; 
 		
 		int intentos = 1; //La inicializamos con uno debido a que ya se realizó un intento.
