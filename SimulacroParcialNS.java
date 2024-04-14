@@ -68,7 +68,8 @@ public class SimulacroParcialNS
 		//Ya obtenidos todos los datos necesarios hacemos la evaluación de aptitud fuera del while.
 		if(menosDe15Minutos && !masDe20Minutos && PROMEDIO <= 18) //Si menosDe15Minutos == true y masDe20Minutos == false (por el ! que indica diferente o inverso) y PROMEDIO menor o igual a 18.
 		{
-			System.out.println("Esta apto. Su menor tiempo fue " + tiempoMinimo + " minutos y lo logró en el día " + diaDeRecord + ". Su promedio fue de " + PROMEDIO + " minutos" ); //Ahora no necesitamos el -1 ya que esta es la variable que almacenaba el valor habiendo usado el menos uno, es diasTotales a la que se le debe restar un valor.
+			System.out.println("Esta apto."); //Ahora no necesitamos el -1 ya que esta es la variable que almacenaba el valor habiendo usado el menos uno, es diasTotales a la que se le debe restar un valor.
+			System.out.println("Su menor tiempo fue de " + tiempoMinimo + " minutos y lo logró en el día " + diaDeRecord + ". Su promedio fue de " + PROMEDIO + " minutos");
 		}
 		else 
 		{
@@ -82,7 +83,7 @@ public class SimulacroParcialNS
 		}
 		if(PROMEDIO > 18) //Si PROMEDIO es mayor 18.
 		{
-			System.out.println("No cumple con el promedio. Dió " + PROMEDIO + " no podía superar 18");
+			System.out.println("No cumple con el promedio. Fue de " + PROMEDIO + " y no podia superar 18");
 		}
 		if(!menosDe15Minutos) //Si var es false
 		{
