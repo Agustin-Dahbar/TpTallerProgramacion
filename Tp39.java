@@ -25,17 +25,6 @@ public class Tp39 {
         // Declaración de listas (en C#) que almacenarán los nombres de los jugadores y sus puntajes finales (que serán la suma de sus 3 puntajes temporales e individuales. Habrá un un nombre y un puntaje por cada jugador.
         ArrayList<String> nombres = new ArrayList<>();
         ArrayList<Integer> puntajesFinales = new ArrayList<>();
- 
-        //INGRESO DE NOMBRES DE LOS JUGADORES
-        // Asignacion de las listas mediante bucle for. Los nombres los brindará el usuario. Los puntajes finales los inicializamos en 0 para evitar problemas.
-        for (int i = 0; i < numeroJugadores; i++)
-        {
-            System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":"); //Instruccion
-            String nombre = scanner.nextLine(); //Entrada del nombre.
-            nombres.add(nombre); //Añadimos el nombre entrado a la lista.
-            puntajesFinales.add(0); // Inicializamos el primer tiro de cada participante en 0.
-        }
-
         
         // Contador para los tiros al centro.
         int tirosAlCentro = 0;
@@ -45,6 +34,14 @@ public class Tp39 {
         //BUCLE INTERNO (de nuevo): ESTOS VALORES OBTUVIDOS SE ALMACENAN EN LA LISTA DE PUNTAJES. SE REPETIRÁ ESTE PROCESO PARA CADA PARTICIPANTE
         for (int i = 0; i < numeroJugadores; i++) // Para iterar por todos los elementos de algo la condicion debe ser 0 < nombre
         {
+        	//INGRESO DE NOMBRES DE LOS JUGADORES
+            // Asignacion de las listas mediante bucle for. Los nombres los brindará el usuario. Los puntajes finales los inicializamos en 0 para evitar problemas.
+        	scanner.nextLine();
+        	System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":"); //Instruccion
+            String nombre = scanner.nextLine(); //Entrada del nombre.
+            nombres.add(nombre); //Añadimos el nombre entrado a la lista.
+            puntajesFinales.add(0); // Inicializamos el primer tiro de cada participante en 0.
+            
             int puntajeTotalDelJugador  = 0; //Variable que almacenará la suma de los 3 puntajes para cada jugador. Al hacer eso se almacenará en la lista. Se repetirá por cada jugador restante.
             
             // Bucle interno que se ejecuta por cada tiro realizado. Obtiene la puntuacion de cada uno y luego suma las 3 para obtener el total del puntaje de este jugador iterado en el bucle completo.
@@ -52,7 +49,6 @@ public class Tp39 {
             {
                 System.out.println("Ingrese la distancia del tiro " + (j + 1) + " para " + nombres.get(i) + ":"); //Via get() obtenemos el nombre. Es equivalente nombres[i] en C# o JS.
                 int distancia = scanner.nextInt();
-                scanner.nextLine(); // Limpiamos el buffer
 
                 //Obtenemos el puntaje del tiro segun la distancia mediante un metodo.
                 int puntajePorTiro = calcularPuntaje(distancia); //Calculamos el puntaje via un metodo argumentado con la distancia entrada por el usuario.
@@ -67,7 +63,7 @@ public class Tp39 {
                 }
             }
             //El bucle externo se ejecutó las 3 veces (una por cada tiro) ya tenemos los puntajes del primer jugador. Ahora se los pushearemos a la lista que almacenará los. 
-
+            
             puntajesFinales.set(i, puntajeTotalDelJugador); //A la lista 'puntajesFinales' le agregamos los puntajes de cada jugador.
             //Esta linea se encuentra en el bucle externo ya que no queremos almacenar cada puntaje de cada tiro, si no solo los puntajes finales de cada uno de los jugadores. Necesitamos pushearle 3 valores. Cada uno de estos valores se obtiene cada 3 iteraciones del bucle externo (puntaje total de cada jugador)
         }
@@ -96,7 +92,10 @@ public class Tp39 {
         // Mostramos el nombre del ganador y su puntaje
         System.out.println("El ganador del torneo es: " + nombres.get(indiceGanador) + " con un puntaje de " + puntajeMaximo);
         System.out.println("La cantidad total de tiros al centro es: " + tirosAlCentro);
-
+        System.out.println("");
+        System.out.println("Listas creadas en el programa: ");
+        System.out.println("Nombres: " + nombres);
+        System.out.println("Puntajes correspondientes: " + puntajesFinales);
         scanner.close(); 
     }
 
@@ -121,4 +120,3 @@ public class Tp39 {
         }
     }
 }
-
