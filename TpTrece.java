@@ -21,15 +21,15 @@ public class TpTrece
 		//dos condiciones en la misma linea de codigo. 
 		if(primerNumero > segundoNumero && primerNumero > tercerNumero) //Si primerNumero es el mayor
 		{
-			System.out.println("El numero mas grande es: " + primerNumero);
+			System.out.println("El numero mas grande es " + primerNumero);
 		}
 		else if(segundoNumero > primerNumero && segundoNumero > tercerNumero) //Si segundo numero es el mayor
 		{
-			System.out.println("El numero mas grande es: " + segundoNumero);
+			System.out.println("El numero mas grande es " + segundoNumero);
 		}
 		else  //Si tercerNumero es el mayor
 		{
-			System.out.println("El numero mayor es: " + tercerNumero);
+			System.out.println("El numero mayor es " + tercerNumero);
 		}
 		
 	}

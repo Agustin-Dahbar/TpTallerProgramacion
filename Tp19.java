@@ -18,7 +18,7 @@ public class Tp19 {
 		boolean noEstaEnNingunGrupo = false;
 		
 		//Sentencias para darle true a la variable correcta
-		if(numero < 10) //Si es menor a 10, significa que tiene un digito
+		if(numero < 10 && numero < -10) //Si es menor a 10, significa que tiene un digito
 		{
 			esDeUnSoloDigito = true;
 		}	
@@ -26,7 +26,7 @@ public class Tp19 {
         {
 	            esImpar = true;
         }
-		if(esDeUnSoloDigito == true && esImpar == true) 
+		if(esDeUnSoloDigito && esImpar) 
 		{
 			estaEnAmbosGrupos = true;
 		}

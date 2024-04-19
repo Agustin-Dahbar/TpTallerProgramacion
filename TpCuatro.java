@@ -9,15 +9,17 @@ public class TpCuatro {
 	{
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Ingresa cuantas horas trabaja y cuanto gana por cada una de ellas. Te calcularé la ganancia semanal.");
+		System.out.println("Ingresa el pago por hora y las horas trabajadas por un empleado. Te devolveré la ganancia semanal.");
 		//Declaramos 2 variables que contendrán los datos de entrada con los que operar.
 		int sueldoPorHora = scanner.nextInt();
-		int horasPorDia = scanner.nextInt();
+		int horasDiariasTrabajadas = scanner.nextInt();
 	
-		//Realizamos la multiplicación correspondiente para obtener el resultado deseado.
-		double salarioSemanal = sueldoPorHora * horasPorDia * 5.5; //5.5 simula ser los 6 dias de trabajo, pero usamos medio para representar al último y
+		//Realizamos la multiplicación correspondiente para obtener el resultado deseado. 
+		double salarioSemanal = sueldoPorHora * horasDiariasTrabajadas * 5.5; //5.5 simula ser los 6 dias de trabajo, pero usamos medio para representar al último y
 		
 		//Imprimimos el resultado final.
 		System.out.println("El salario semanal es: $" + salarioSemanal);
+		
+		scanner.close();
 	}
 }

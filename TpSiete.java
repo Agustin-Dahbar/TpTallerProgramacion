@@ -10,7 +10,7 @@ public class TpSiete {
 	{
 		
 		//Instrucción
-		System.out.println("Por favor ingresa el ancho y el largo de un terreno en metros.");
+		System.out.println("Por favor ingresa el ancho y luego el largo de un terreno (expresado en metros).");
 		
 		//Datos que obtuvimos del usuario con los que averiguaremos los resultados exigidos.
 		int anchoTerreno = scanner.nextInt();

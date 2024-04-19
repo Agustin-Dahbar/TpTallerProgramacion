@@ -13,9 +13,9 @@ public class TpDos {
 		System.out.println("Ingresa tus tres notas a continuación.. ");
 		
 		// Declaramos y asignamos el valor de las variables con los valores ingresados por el user.
-		int notaUno = scanner.nextInt();
-		int notaDos = scanner.nextInt();
-		int notaTres = scanner.nextInt();
+		double notaUno = scanner.nextDouble();
+		double notaDos = scanner.nextDouble();
+		double notaTres = scanner.nextDouble();
 		
 		//Nueva variable que almacenará el promedio de las 3 variables anteriores.
 		double promedioFinal = (notaUno + notaDos + notaTres) / 3;

@@ -9,13 +9,13 @@ public class TpOcho {
 	public static void main(String[] args) 
 	{
 		//Instrucción para usuario
-		System.out.println("Ingresa dos numeros. Se realizarán las 4 operaciones aritmeticas entre ellos.");
+		System.out.println("Ingresa dos numeros. Se realizarán las 4 operaciones aritméticas entre ellos.");
 		
 		//Declaración de variables e inicialización con los valores que ingresen los usuarios.
 		int numeroUno = scanner.nextInt();
 		int numeroDos = scanner.nextInt();
 		
-		//Lógica para llevar a cabo las 4 operaciones aritmeticas.
+		//Lógica para llevar a cabo las 4 operaciones aritméticas.
 		int producto = numeroUno * numeroDos; 
 		double division = numeroUno / numeroDos;
 		int suma = numeroUno + numeroDos;
