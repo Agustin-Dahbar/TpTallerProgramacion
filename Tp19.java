@@ -18,7 +18,7 @@ public class Tp19 {
 		boolean noEstaEnNingunGrupo = false;
 		
 		//Sentencias para darle true a la variable correcta
-		if(numero < 10 && numero < -10) //Si es menor a 10, significa que tiene un digito
+		if(numero > -10 && numero < 10) //Si número es mayor a -10 y menor a 10, alcanzamos todos los números de un dígito.
 		{
 			esDeUnSoloDigito = true;
 		}	
@@ -30,7 +30,7 @@ public class Tp19 {
 		{
 			estaEnAmbosGrupos = true;
 		}
-		else //Si se ejecuta else, significa que las condiciones no se cumplieron, por lo que es mayor a 10 (1ra condicion) y es par (2da condicion), es decir, no esta en ningun grupo.
+		else //Si se ejecuta else, significa que las condiciones no se cumplieron, por lo que tiene múltiples números y no es impar.
 		{
 			noEstaEnNingunGrupo = true;
 		}

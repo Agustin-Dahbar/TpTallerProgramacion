@@ -15,18 +15,16 @@ public class Tp16 {
 		System.out.println("Ingrese la cantidad de asientos disponibles");
 		int cantidadDeAsientos = scanner.nextInt(); 
 		
-		//Resta que devuelve los inscriptos sin asientos, es decir los asientos que necesitamos.
-		int asientosFaltantes = cantidadDeInscriptos - cantidadDeAsientos;
-		// Esta variable se usará solo si se ejecuta el else. Si se ejecuta el if, no se usará y su valor será negativo.
-		
 		//Sentencia if para resolver el problema.
 		if(cantidadDeAsientos > cantidadDeInscriptos) 
 		{
-			System.out.println("Los cantidad de asientos es suficiente para la asistencias recibida.");
+			int asientosSobrantes = cantidadDeAsientos - cantidadDeInscriptos; //Variable privada y temporal, almacenará cuantos asientos sobran.
+			System.out.println("Los cantidad de asientos es suficiente para la asistencias recibida. Nos sobran " + asientosSobrantes + ".");
 		}
 		else 
 		{
-			System.out.println("No alcanzan los asientos. Necesitamos " + asientosFaltantes + " mas");
+			int asientosFaltantes = cantidadDeInscriptos - cantidadDeAsientos; //Variable privada y temporal, almacenará cuantos asientos faltan.
+			System.out.println("No alcanzan los asientos. Nos faltan " + asientosFaltantes + " más.");
 		}
 		
 	}

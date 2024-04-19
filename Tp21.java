@@ -19,43 +19,38 @@ public class Tp21 {
 			numero = scanner.nextInt();
 		}
 		
-		
-		//Variable String que el switch le dará el valor correspondiente del día de la semana según el número indicado por el usuario
-		String diaDeLaSemana = "valor temporal usado para que la PC no asigne cosas indeseadas a esta variable y genere problemas";
-		
-		//Sentencia if que analiza si el numero esta entre 1 y 7. Si lo esta ejecuta una sentencia switch que itera por los 7 valores
-		//posibles y en cada uno le da el valor correspondiente de dia de la semana, además de imprimirlo.		
+		//Variable a la que se le asignará un valor en los cases del switch según el número indicado en la variable de entrada. 
+		String diaDeLaSemana = "undefined";
+			
+			//Sentencia switch, acepta una variable de entrada para asignarle un valor a diaDeLaSemana.
 			switch (numero) 
 			{
 	            case 1:
-	                diaDeLaSemana = "Domingo";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "domingo";
 	                break;
 	            case 2:
-	                diaDeLaSemana = "Lunes";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "lunes";
 	                break;
 	            case 3:
-	                diaDeLaSemana = "Martes";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "martes";
 	                break;
 	            case 4:
-	                diaDeLaSemana = "Miércoles";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "miércoles";
 	                break;
 	            case 5:
-	                diaDeLaSemana = "Jueves";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "jueves";
 	                break;
 	            case 6:
-	                diaDeLaSemana = "Viernes";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "viernes";
 	                break;
 	            case 7:
-	                diaDeLaSemana = "Sábado";
-	                System.out.println("El dia de la semana correspondiente al numero seleccionado es: " + diaDeLaSemana);
+	                diaDeLaSemana = "sábado";
 	                break;
 			}
+			//Los valores en minúsculas es porque uno de esos 7 se concatenará en la salida final.
+			
+			//Devolvemos el dia obtenido por la sentencia switch mediante el valor de la variable de entrada.
+			System.out.println("El dia de la semana convertido a string es el " + diaDeLaSemana);
 	}
 }
 
